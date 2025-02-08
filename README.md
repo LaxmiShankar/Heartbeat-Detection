@@ -1,5 +1,3 @@
-# Predictive-Heartbeat-Detection
-
 # Overview
 As part of an assignment for ECE 3040 : Numerical Methods, I developed a system to simulate & detect a heartbeat, applying predictive math & signal processing techniques to provide accurate, real-time information. The system was built using MATLAB, Arduino, ultrasonic sensors and servo motors. Signal-processing techniques such as digital filters, regression & polynomial curve fitting, were used to predict data with an error threshold of <0.05%. 
 
@@ -22,3 +20,10 @@ Next, the data was integrated with a MATLAB GUI that allowed the user to see vis
 
 2. However, the collected data was not useable to calculate the BPM (beats per minute) of the simulated heart. Excessive noise occurred every few seconds or so, causing random peaks & values of infinity to be collected. Various numerical & processing methods were used to turn the data into usable values. 
  
+To determine the best approach, I experimented with various methods, such as using digital filters (low pass Butterworth) and manually filtering out values of null and inf. 
+
+3. While the data was plotted in real-time, to improve accuracy and usability of the project, I implemented numerical solutions to predict data within a 0.1 second accuracy.  This included interpolation & polynomial curve fitting with different orders (2-7). A lower order polynomial was determined to be more feasible, and implemented through MATLAB's polyfit and polyval. 
+
+## How to Run 
+- Setup an Arduino and ultrasonic sensor & connect them to MATLAB using the Arduino package add-on. 
+- Open the GUI, and initialize the setup. Then either load pre-saved files or allow the data to plot in real-time. 
